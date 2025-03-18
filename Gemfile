@@ -13,6 +13,7 @@ gem "bootsnap", require: false
 
 group :development, :test do
   gem "debug"
+  gem 'sgcop', github: 'SonicGarden/sgcop', branch: 'main'
   gem "brakeman", require: false
 end
 
