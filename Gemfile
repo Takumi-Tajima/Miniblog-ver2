@@ -24,5 +24,7 @@ end
 
 group :development do
   gem 'bullet'
+  gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'web-console'
 end
