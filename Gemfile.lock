@@ -109,6 +109,11 @@ GEM
     diff-lcs (1.6.0)
     drb (2.2.1)
     erubi (1.13.1)
+    factory_bot (6.5.1)
+      activesupport (>= 6.1.0)
+    factory_bot_rails (6.4.4)
+      factory_bot (~> 6.5)
+      railties (>= 5.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     haml (6.3.0)
@@ -344,6 +349,7 @@ DEPENDENCIES
   brakeman
   cssbundling-rails
   debug
+  factory_bot_rails
   haml-rails
   haml_lint
   jsbundling-rails
