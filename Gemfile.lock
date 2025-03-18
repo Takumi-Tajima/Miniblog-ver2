@@ -119,6 +119,12 @@ GEM
       activesupport (>= 5.1)
       haml (>= 4.0.6)
       railties (>= 5.1)
+    haml_lint (0.61.0)
+      haml (>= 5.0)
+      parallel (~> 1.10)
+      rainbow
+      rubocop (>= 1.0)
+      sysexits (~> 1.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
@@ -278,6 +284,7 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.5)
+    sysexits (1.2.0)
     temple (0.10.3)
     thor (1.3.2)
     tilt (2.6.0)
@@ -320,6 +327,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   haml-rails
+  haml_lint
   jsbundling-rails
   pg
   propshaft
