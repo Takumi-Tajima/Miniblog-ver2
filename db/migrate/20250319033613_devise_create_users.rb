@@ -11,6 +11,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.0]
       ## Rememberable
       t.datetime :remember_created_at
 
+      ## Confirmable
+      t.string   :confirmation_token
+      t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email
+
       ## Trackable
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at
@@ -22,5 +28,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.0]
     end
 
     add_index :users, :email, unique: true
+    add_index :users, :confirmation_token, unique: true
   end
 end
