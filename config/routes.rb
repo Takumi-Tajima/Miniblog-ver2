@@ -5,5 +5,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[index]
 
+  scope module: :users do
+    resources :posts, only: %i[new create]
+  end
+
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
