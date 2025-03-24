@@ -25,7 +25,10 @@ end
 
 group :development do
   gem 'bullet'
+  gem 'web-console'
+end
+
+group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'web-console'
 end
