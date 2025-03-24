@@ -1,2 +1,8 @@
-%h1 Posts#index
-%p Find me in app/views/posts/index.html.haml
+%h1.fs-2.text-center 全体タイムライン
+
+.mt-5.text-center
+  - if @posts
+    - @posts.each do |post|
+      = render 'post', post: post
+  - else
+    %p.fs-4 まだ投稿がありません
