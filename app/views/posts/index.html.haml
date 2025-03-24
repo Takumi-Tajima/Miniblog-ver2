@@ -1,6 +1,10 @@
 %h1.fs-2.text-center 全体タイムライン
 
-.mt-5.text-center
+- if user_signed_in?
+  = link_to '新規投稿', new_post_path, class: 'd-grid gap-2 col-6 mx-auto btn btn-outline-primary my-5'
+  
+
+.text-center
   - if @posts
     - @posts.each do |post|
       = render 'post', post: post
