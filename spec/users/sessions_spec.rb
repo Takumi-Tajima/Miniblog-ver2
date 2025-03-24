@@ -32,7 +32,7 @@ RSpec.describe 'ユーザーのログイン機能', type: :system do
     it 'ログアウトできること' do
       visit root_path
 
-      expect(page).to have_content 'ホーム画面'
+      expect(page).to have_content '全体タイムライン'
 
       within '.navbar' do
         expect(page).to have_content 'maeda'
@@ -50,7 +50,7 @@ RSpec.describe 'ユーザーのログイン機能', type: :system do
       visit new_user_session_path
 
       expect(page).to have_content 'すでにログインしています。'
-      expect(page).to have_content 'ホーム画面'
+      expect(page).to have_content '全体タイムライン'
     end
   end
 end
