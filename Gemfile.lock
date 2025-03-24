@@ -131,12 +131,18 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.6.0)
     drb (2.2.1)
+    email_spec (2.3.0)
+      htmlentities (~> 4.3.3)
+      launchy (>= 2.1, < 4.0)
+      mail (~> 2.7)
     erubi (1.13.1)
     factory_bot (6.5.1)
       activesupport (>= 6.1.0)
     factory_bot_rails (6.4.4)
       factory_bot (~> 6.5)
       railties (>= 5.0.0)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     haml (6.3.0)
@@ -154,6 +160,7 @@ GEM
       rainbow
       rubocop (>= 1.0)
       sysexits (~> 1.1)
+    htmlentities (4.3.4)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
@@ -406,7 +413,9 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
+  email_spec
   factory_bot_rails
+  faker
   haml-rails
   haml_lint
   jsbundling-rails
