@@ -1,6 +1,6 @@
 .card.mt-4
   .card-body.p-5
-    .fs-4= post.content
+    .fs-4= link_to post.content, post_path(post), class: 'text-body text-decoration-none'
     .d-flex.flex-row-reverse.gap-3
       .fs-6= l(post.created_at)
       .fs-6= post.user.name
