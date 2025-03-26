@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  resources :posts, only: %i[index show]
-
   scope module: :users do
-    resources :posts, only: %i[new create]
+    resources :posts, only: %i[new edit create update destroy]
   end
+
+  resources :posts, only: %i[show]
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
