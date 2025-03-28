@@ -1,3 +1,5 @@
+%h1.fs-2 プロフィール編集画面
+
 = simple_form_for @user, url: profile_path do |f|
   = f.input :name, autofocus: true
   = f.input :biography, as: :text, input_html: { rows: 5 }
