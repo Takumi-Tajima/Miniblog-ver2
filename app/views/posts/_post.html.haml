@@ -3,4 +3,4 @@
     .fs-4= link_to post.content, post_path(post), class: 'text-body text-decoration-none'
     .d-flex.flex-row-reverse.gap-3
       .fs-6= l(post.created_at)
-      .fs-6= post.user.name
+      .fs-6= link_to post.user.name, user_path(post.user)
