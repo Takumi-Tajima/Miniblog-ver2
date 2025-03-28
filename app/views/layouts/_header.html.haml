@@ -5,7 +5,7 @@
     %ul.navbar-nav.ms-auto
       - if user_signed_in?
         %li.nav-item.d-flex.align-items-center
-          .me-3= link_to current_user.name, edit_user_registration_path, class: 'text-white fs-5 text-decoration-none'
+          .me-3= link_to current_user.name, profile_path, class: 'text-white fs-5 text-decoration-none'
           = button_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger border-white'
       - else
         %li.nav-item

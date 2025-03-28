@@ -5,6 +5,8 @@ ja:
         content: 内容
       user:
         name: 名前
+        biography: 自己紹介
+        blog_url: ブログURL
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
