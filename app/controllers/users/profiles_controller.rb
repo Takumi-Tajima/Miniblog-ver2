@@ -9,7 +9,7 @@ class Users::ProfilesController < Users::ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to root_path, notice: t('controllers.common.updated', model: 'プロフィール'), status: :see_other
+      redirect_to profile_path, notice: t('controllers.common.updated', model: 'プロフィール'), status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
