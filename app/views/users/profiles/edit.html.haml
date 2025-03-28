@@ -1,0 +1,5 @@
+= simple_form_for @user, url: profile_path do |f|
+  = f.input :name, autofocus: true
+  = f.input :biography, as: :text, input_html: { rows: 5 }
+  = f.input :blog_url, placeholder: 'https://example.com'
+  = f.button :submit, class: 'btn btn-primary'
