@@ -32,7 +32,7 @@ RSpec.describe 'ユーザーのログイン機能', type: :system do
     it 'ログアウトできること' do
       visit root_path
 
-      expect(page).to have_content '全体タイムライン'
+      expect(page).to have_selector 'h1', text: '全体タイムライン'
 
       within '.navbar' do
         expect(page).to have_content 'maeda'
@@ -40,7 +40,7 @@ RSpec.describe 'ユーザーのログイン機能', type: :system do
       end
 
       within '.navbar' do
-        click_button 'ログアウト'
+        click_on 'ログアウト'
       end
 
       expect(page).to have_content 'ログアウトしました。'
