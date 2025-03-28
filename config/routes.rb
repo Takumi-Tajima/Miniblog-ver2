@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: %i[show]
+  resources :users, only: %i[show]
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
