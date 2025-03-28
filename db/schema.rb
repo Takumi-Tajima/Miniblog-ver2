@@ -38,7 +38,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_28_010115) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile", limit: 200
+    t.string "biography", limit: 200
     t.string "blog_url"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
