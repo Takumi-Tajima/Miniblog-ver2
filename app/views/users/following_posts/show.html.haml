@@ -3,10 +3,9 @@
 - if user_signed_in?
   .text-center= link_to '全体タイムライン', root_path
 
-- if @post
-  .card.mt-4
-    .card-body.p-5
-      .fs-4= @post.content
-      .d-flex.flex-row-reverse.gap-3
-        .fs-6= l(@post.created_at)
-        .fs-6= link_to @post.user.name, user_path(@post.user)
+.text-center
+  - if @posts
+    - @posts.each do |post|
+      = render 'posts/post', post: post
+  - else
+    %p.fs-4 まだ投稿がありません
