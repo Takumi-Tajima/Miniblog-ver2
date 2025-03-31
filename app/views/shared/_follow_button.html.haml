@@ -1,0 +1,6 @@
+- if post.liked_by?(current_user)
+  = button_to post_like_path(post), method: :delete, class: 'btn btn-link p-0 border-0 text-decoration-none' do
+    .bi.bi-heart-fill.text-danger
+- else
+  = button_to post_like_path(post), method: :post, class: 'btn btn-link p-0 border-0 text-decoration-none' do
+    .bi.bi-heart.text-body
