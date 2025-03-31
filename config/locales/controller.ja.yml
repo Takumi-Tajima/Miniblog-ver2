@@ -1,5 +1,8 @@
 ja:
   controllers:
+    likes:
+      created: 'いいねしました'
+      destroyed: 'いいねを解除しました'
     relationships:
       created: "%{model}をフォローしました。"
       destroyed: "%{model}のフォローを解除しました。"
