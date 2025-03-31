@@ -1,5 +1,11 @@
 ja:
   controllers:
+    relationships:
+      created: "%{model}をフォローしました。"
+      destroyed: "フォローを解除しました。"
+      failed:
+        created: "%{model}をフォローできませんでした。"
+        destroyed: "フォローを解除できませんでした。"
     common:
       created: "%{model}を登録しました。"
       updated: "%{model}を編集しました。"
