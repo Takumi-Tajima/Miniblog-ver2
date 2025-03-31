@@ -4,7 +4,8 @@ gem 'rails', '~> 8.0.1'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
-gem 'devise'
+# NOTE: deviseのTestHelperがまだRails8に対応していないため。Rails8対応版がリリースされたら指定をなくす
+gem 'devise', git: 'https://github.com/heartcombo/devise', branch: 'main'
 gem 'haml-rails'
 gem 'jsbundling-rails'
 gem 'pg'
