@@ -1,18 +1,25 @@
 class Users::RelationshipsController < Users::ApplicationController
+  before_action :set_user, only: %i[create destroy]
+
   def create
-    user = User.find_by(id: params.expect(:user_id))
-    if user && current_user.follow(user)
-      redirect_to request.referer || root_path, notice: t('controllers.relationships.created', model: "#{user.name}さん")
+    if current_user.follow(@user)
+      redirect_to user_path(@user), notice: t('controllers.relationships.created', model: @user.name)
     else
-      redirect_to request.referer || root_path, notice: t('controllers.relationships.failed.created', model: "#{user.name}さん"), status: :unprocessable_entity
+      redirect_to user_path(@user), notice: t('controllers.relationships.failed.created', model: @user.name), status: :unprocessable_entity
     end
   end
 
   def destroy
-    if current_user.unfollow(params.expect(:id))
-      redirect_to request.referer || root_path, notice: t('controllers.relationships.destroyed'), status: :see_other
+    if current_user.unfollow(@user)
+      redirect_to user_path(@user), notice: t('controllers.relationships.destroyed', model: @user.name), status: :see_other
     else
-      redirect_to request.referer || root_path, notice: t('controllers.relationships.failed.destroyed'), status: :see_other
+      redirect_to user_path(@user), notice: t('controllers.relationships.failed.destroyed', model: @user.name), status: :see_other
     end
+  end
+
+  private
+
+  def set_user
+    @user = User.find_by(id: params.expect(:id))
   end
 end
