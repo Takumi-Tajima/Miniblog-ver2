@@ -5,9 +5,12 @@ class User < ApplicationRecord
   has_many :active_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy, inverse_of: :follower
   has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy, inverse_of: :followed
   has_many :following, through: :active_relationships, source: :followed
+  has_many :likes, dependent: :destroy
 
   validates :name, format: { with: /\A[a-zA-Z0-9]+\z/ }, length: { maximum: 20 }
   validates :biography, length: { maximum: 200 }
+
+  scope :default_order, -> { order(:id) }
 
   def follow(user)
     return false if user.id == id
