@@ -3,7 +3,7 @@
     .fs-4= link_to post.content, post_path(post), class: 'text-body text-decoration-none'
     .d-flex.flex-row-reverse.gap-3
       .fs-6.d-flex.gap-1
-        = render 'shared/follow_button', post: post
-        = post.likes_count
+        = render 'shared/like_button', post: post
+        #like-test= post.likes_count
       .fs-6= l(post.created_at)
       .fs-6= link_to post.user.name, user_path(post.user)
