@@ -4,6 +4,6 @@
     .d-flex.flex-row-reverse.gap-3
       .fs-6.d-flex.gap-1
         = render 'shared/like_button', post: post
-        #like-test= post.likes_count
+        = link_to post.likes_count, post_likes_path(post)
       .fs-6= l(post.created_at)
       .fs-6= link_to post.user.name, user_path(post.user)
