@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   scope module: :users do
     resources :posts, only: %i[new edit create update destroy]
     resource :profile, only: %i[show edit update]
+    resources :relationships, only: %i[create destroy]
   end
 
   resources :posts, only: %i[show]
