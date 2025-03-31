@@ -39,4 +39,25 @@ RSpec.describe 'いいね機能', type: :system do
       expect(page).to have_content '他人の投稿'
     end
   end
+
+  describe 'いいねしたユーザーの一覧' do
+    let(:sato) { create(:user, name: 'sato') }
+    let(:suzuki) { create(:user, name: 'suzuki') }
+    let(:takahashi) { create(:user, name: 'takahashi') }
+
+    before do
+      create(:like, user: sato, post: post)
+      create(:like, user: suzuki, post: post)
+      create(:like, user: takahashi, post: post)
+    end
+
+    it 'いいねしたユーザーの一覧が表示されること' do
+      visit post_likes_path(post)
+
+      expect(page).to have_selector 'h1', text: 'いいねしたユーザー'
+      expect(page).to have_content 'sato'
+      expect(page).to have_content 'suzuki'
+      expect(page).to have_content 'takahashi'
+    end
+  end
 end

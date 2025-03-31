@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :name, format: { with: /\A[a-zA-Z0-9]+\z/ }, length: { maximum: 20 }
   validates :biography, length: { maximum: 200 }
 
+  scope :default_order, -> { order(:id) }
+
   def follow(user)
     return false if user.id == id
 
