@@ -2,7 +2,7 @@ ja:
   controllers:
     relationships:
       created: "%{model}をフォローしました。"
-      destroyed: "フォローを解除しました。"
+      destroyed: "%{model}のフォローを解除しました。"
       failed:
         created: "%{model}さんをフォローできませんでした。"
         destroyed: "%{model}さんをフォローを解除できませんでした。"
