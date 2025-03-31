@@ -1,11 +1,11 @@
 class Users::Posts::LikesController < Users::ApplicationController
   def create
-    current_user.likes.create!(post_id: params[:post_id])
+    current_user.likes.create!(post_id: params.expect(:post_id))
     redirect_to request.referer || root_path, notice: t('controllers.likes.created')
   end
 
   def destroy
-    current_user.likes.find_by!(post_id: params[:post_id]).destroy!
+    current_user.likes.find(params.expect(:id)).destroy!
     redirect_to request.referer || root_path, notice: t('controllers.likes.destroyed')
   end
 end

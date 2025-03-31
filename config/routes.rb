@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   scope module: :users do
     resources :posts, only: %i[new edit create update destroy] do
-      resource :like, only: %i[create destroy], module: :posts
+      resources :likes, only: %i[index create destroy], module: :posts
     end
     resource :profile, only: %i[show edit update]
     resource :following_posts, only: %i[show]
