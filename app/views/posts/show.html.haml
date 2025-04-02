@@ -8,6 +8,8 @@
       .fs-6= l(@post.created_at)
       .fs-6= link_to @post.user.name, user_path(@post.user)
 
+= render 'comments/index', comments: @comments
+
 - if user_signed_in? && current_user.id == @post.user_id
   .mt-5.d-flex.justify-content-between
     = link_to '編集', edit_post_path(@post), class: 'btn btn-outline-primary'

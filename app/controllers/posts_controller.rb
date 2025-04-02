@@ -5,5 +5,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params.expect(:id))
+    @comments = @post.comments.preload(:user).default_order
   end
 end
