@@ -11,5 +11,6 @@ ja:
         destroyed: "%{model}さんをフォローを解除できませんでした。"
     common:
       created: "%{model}を登録しました。"
+      not_created: "%{model}を登録できませんでした。"
       updated: "%{model}を編集しました。"
       destroyed: "%{model}を削除しました。"
