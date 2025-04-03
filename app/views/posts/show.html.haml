@@ -13,5 +13,5 @@
     = link_to '編集', edit_post_path(@post), class: 'btn btn-outline-primary'
     = button_to '削除', post_path(@post), method: :delete, data: { turbo_confirm: t('views.common.confirm.destroy') }, class: 'btn btn-outline-danger'
 
-= render 'comments/index', comments: @comments
 = render 'comments/form', post: @post, comment: @comment
+= render 'comments/index', comments: @comments
