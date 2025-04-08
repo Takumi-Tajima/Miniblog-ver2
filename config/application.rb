@@ -39,5 +39,7 @@ module MiniblogVer2
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    Faker::Config.locale = :en
   end
 end

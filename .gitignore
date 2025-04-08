@@ -40,3 +40,4 @@
 
 # Ignore database config
 database.yml
+node_modules

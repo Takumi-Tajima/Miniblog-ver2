@@ -1,0 +1,10 @@
+.card.mt-5
+  .card-body.p-5
+    .fs-5= comment.content
+    .d-flex.flex-row-reverse.gap-3
+      - if user_signed_in? && comment.user == current_user
+        = button_to post_comment_path(comment.post, comment), method: :delete, class: 'btn btn-link p-0 border-0 text-decoration-none' do
+          .bi.bi-x-circle.text-danger
+        end
+      .fs-6= l(comment.created_at)
+      .fs-6= comment.user.name

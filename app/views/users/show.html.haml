@@ -1,0 +1,15 @@
+%h1.fs-2.text-center #{@user.name}さんのプロフィール
+
+.col-6.mx-auto.mt-5
+  - if user_signed_in? && current_user != @user
+    - if current_user.following?(@user)
+      .mb-5= button_to 'フォロー中', unfollow_user_path(@user), method: :delete, class: 'btn btn-outline-dark'
+    - else
+      .mb-5= button_to 'フォローする', follow_user_path(@user), method: :post, class: 'btn btn-primary'
+  .mb-5
+    .mt-5
+      .fs-4 自己紹介
+      .p-3=@user.biography
+    .mt-5
+      .fs-4 ブログURL
+      .p-3=@user.blog_url

@@ -1,0 +1,12 @@
+%h1.fs-2.text-center いいねしたユーザー
+
+.col-8.mx-auto.mt-5
+  .card
+    .card-body
+      - if @users.present?
+        %ul.list-group.list-group-flush
+          - @users.each do |user|
+            %li.list-group-item
+              = link_to user.name, user_path(user), class: 'text-decoration-none'
+      - else
+        .text-center いいねしているユーザーはいません

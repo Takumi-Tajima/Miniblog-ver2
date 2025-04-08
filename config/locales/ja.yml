@@ -1,5 +1,14 @@
 ja:
   activerecord:
+    attributes:
+      comment:
+        content: コメント
+      post:
+        content: 内容
+      user:
+        name: 名前
+        biography: 自己紹介
+        blog_url: ブログURL
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -177,7 +186,7 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      default: "%Y/%m/%d %H:%M"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
