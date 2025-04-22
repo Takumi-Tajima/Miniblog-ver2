@@ -20,6 +20,6 @@ class Users::RelationshipsController < Users::ApplicationController
   private
 
   def set_user
-    @user = User.find_by(id: params.expect(:id))
+    @user = User.find(params.expect(:id))
   end
 end
