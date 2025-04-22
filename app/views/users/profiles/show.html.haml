@@ -1,0 +1,13 @@
+%h1.fs-2.text-center プロフィール
+
+.col-6.mx-auto.mt-5
+  .mb-5
+    %h2.fs-3=@user.name
+    .mt-5
+      .fs-4 自己紹介
+      .p-3=@user.biography
+    .mt-5
+      .fs-4 ブログURL
+      .p-3=@user.blog_url
+
+  = link_to 'プロフィール編集', edit_profile_path, class: 'btn btn-outline-primary'

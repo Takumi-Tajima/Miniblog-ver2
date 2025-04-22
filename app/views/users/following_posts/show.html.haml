@@ -1,0 +1,11 @@
+%h1.fs-2.text-center フォロー中のユーザーの投稿
+
+- if user_signed_in?
+  .text-center= link_to '全体タイムライン', root_path
+
+.text-center
+  - if @posts
+    - @posts.each do |post|
+      = render 'posts/post', post: post
+  - else
+    %p.fs-4 まだ投稿がありません
